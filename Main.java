@@ -9,7 +9,7 @@ public class Main {
         CusDequeue<Character> deq = new CusDequeue<>();
 
         for(char c : input.replaceAll(" ", "").toLowerCase().toCharArray()){
-            deq.enqueueF(c);
+            deq.enqueueB(c);
         }
 
         int length = deq.size;
@@ -20,6 +20,8 @@ public class Main {
                 isPalindrome = false;
                 break;
             }
+            deq.removeB();
+            deq.removeF();
         }
 
         System.out.println("The word \"" + input + "\" is " + (isPalindrome ? "" : "not ") + "palindrome");

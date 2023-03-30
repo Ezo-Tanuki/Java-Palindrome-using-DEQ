@@ -59,6 +59,7 @@ public class CusDequeue<E> {
         Node<E> newHead = new Node<>(data);
         newHead.setNext(this.head);
 
+        this.head.prev = newHead;
         this.head = newHead;
         this.size++;
     }
@@ -72,6 +73,7 @@ public class CusDequeue<E> {
         Node<E> newTail = new Node<>(data);
         newTail.setPrev(this.tail);
 
+        this.tail.next = newTail;
         this.tail = newTail;
         this.size++;
     }
@@ -84,6 +86,7 @@ public class CusDequeue<E> {
         }
 
         this.head = this.head.next;
+        this.head.prev = null;
         size--;
     }
 
@@ -95,6 +98,7 @@ public class CusDequeue<E> {
         }
 
         this.tail = this.tail.prev;
+        this.tail.next = null;
         size--;
     }
 
